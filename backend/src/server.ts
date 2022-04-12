@@ -1,4 +1,6 @@
-import express from 'express'
+import * as express from 'express'
+import "reflect-metadata"
+import { getConnection } from './database'
 
 const app = express()
 
@@ -10,6 +12,7 @@ app.get('/', (req, res) => {
     })
 })  
 
-app.listen(5000, () => {
+app.listen(5000, async () => {
+    await getConnection();
     console.log('Server started on port 5000 🚀')
 })
