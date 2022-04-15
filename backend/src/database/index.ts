@@ -1,12 +1,17 @@
-import { DataSource } from "typeorm";
+import { getConnectionManager } from "typeorm";
 
-export const AppDataSource = new DataSource({
-  type: "sqlite",
-  database: "./src/database/database.db",
-  synchronize: true,
-  logging: false,
-  entities: ['./src/database/entity/*.ts'],
-  migrations: ["./src/database/migrations/*.ts"]
-})
+export default async function connect() {
+  const connectionManager = getConnectionManager();
 
-export const getConnection = () => AppDataSource.initialize()
+  const connectionObj = {
+    type: "sqlite",
+    database: "./src/database/database.db",
+    entities: [`./src/entities/*{.ts,.js}`],
+  }
+
+  const connection = connectionManager.create(connectionObj as any);
+  console.log(connectionObj)
+  await connection.connect();
+
+  return connection;
+}
