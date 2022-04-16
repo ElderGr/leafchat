@@ -10,7 +10,7 @@ export default async function connect() {
   }
 
   const connection = connectionManager.create(connectionObj as any);
-  console.log(connectionObj)
+  console.log(`Database connected`)
   await connection.connect();
 
   return connection;

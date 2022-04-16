@@ -1,23 +1,13 @@
 import * as express from 'express'
 import "reflect-metadata"
-import { getRepository } from 'typeorm'
 import getConnection from './database'
-import User from './entities/User'
+import Routes from './routes/index.routes'
 
 const app = express()
 
 app.use(express.json())
 
-app.get('/', async (req, res) => {
-  try{
-    const repository = getRepository(User)
-
-    return res.json(await repository.find())
-  }catch(err){
-    console.log(err)
-    return res.json(err)
-  }
-})
+app.use(Routes)
 
 app.listen(5000, async () => {
     await getConnection()
