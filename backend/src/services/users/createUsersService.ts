@@ -1,6 +1,7 @@
 import { Role } from "src/entities/Role";
 import { User } from "src/entities/User";
 import { getRepository } from "typeorm";
+import { hash } from "bcryptjs";
 
 interface IRequest {
   name: string;
@@ -28,12 +29,13 @@ export default async function createUserService({
     throw new Error("Role not found")
   }
 
+  const hashedPassword = await hash(password, 8)
 
   const createdUser = userRepository.create({
     email,
     name,
     id_role,
-    password
+    password: hashedPassword
   })
 
   await userRepository.save(createdUser)
