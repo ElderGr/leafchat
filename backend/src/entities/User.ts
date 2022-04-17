@@ -1,5 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToOne, JoinColumn } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToMany } from "typeorm"
 import { Role } from "./Role";
+import { Exclude } from "class-transformer";
+import { Post } from "./Post";
 
 @Entity(`User`)
 export class User {
@@ -17,10 +19,14 @@ export class User {
     @JoinColumn({ name: 'id_role' })
     role: Role;
 
+    @OneToMany(() => Post, post => post.user)
+    post: Post;
+
     @Column()
     email: string;
 
     @Column()
+    @Exclude()
     password: string;
 
     @CreateDateColumn()
