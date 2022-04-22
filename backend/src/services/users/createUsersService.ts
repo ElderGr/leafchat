@@ -1,5 +1,5 @@
-import { Role } from "src/entities/Role";
-import { User } from "src/entities/User";
+import { Role } from "src/entities/sql/Role";
+import { User } from "src/entities/sql/User";
 import { getRepository } from "typeorm";
 import { hash } from "bcryptjs";
 

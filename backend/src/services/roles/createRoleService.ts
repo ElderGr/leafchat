@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm";
-import {Role} from "../../entities/Role";
+import {Role} from "../../entities/sql/Role";
 
 interface IParams{
   name: string;

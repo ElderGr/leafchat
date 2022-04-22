@@ -1,4 +1,4 @@
-import { User } from "src/entities/User";
+import { User } from "src/entities/sql/User";
 import { getRepository } from "typeorm";
 
 export default async function listUserService(): Promise<User[]>{

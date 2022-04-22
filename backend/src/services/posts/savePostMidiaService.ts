@@ -1,5 +1,5 @@
-import { Post } from "src/entities/Post";
-import { PostMidia } from "src/entities/PostMidia";
+import { Post } from "src/entities/sql/Post";
+import { PostMidia } from "src/entities/sql/PostMidia";
 import { getRepository } from "typeorm";
 
 interface IParams{

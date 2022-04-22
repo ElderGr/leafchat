@@ -1,5 +1,5 @@
-import { Post } from "src/entities/Post";
-import { User } from "src/entities/User";
+import { Post } from "src/entities/sql/Post";
+import { User } from "src/entities/sql/User";
 import { getRepository } from "typeorm";
 import savePostMidiaService from "./savePostMidiaService";
 

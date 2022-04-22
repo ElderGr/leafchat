@@ -1,4 +1,4 @@
-import { Post } from "src/entities/Post";
+import { Post } from "src/entities/sql/Post";
 import { getRepository } from "typeorm";
 
 export default async function listPostService(): Promise<Post[]>{
