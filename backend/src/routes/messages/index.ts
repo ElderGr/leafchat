@@ -3,7 +3,7 @@ import * as MessagesController from "@controllers/Messages";
 
 const router = Router()
 
-router.get(`/`, MessagesController.listMessages)
+router.get(`/:idChat`, MessagesController.listMessages)
 router.post(`/`, MessagesController.createMessage)
 
 export default router
