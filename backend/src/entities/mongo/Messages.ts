@@ -20,4 +20,10 @@ export class Messages {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+    constructor(message: string, from: string, to: string){
+      this.message = message;
+      this.from = from;
+      this.to = to
+    }
 }

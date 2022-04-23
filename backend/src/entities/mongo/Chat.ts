@@ -13,7 +13,7 @@ export class Chat {
     @Column()
     name: string;
 
-    @Column(() => Messages)
+    @Column(type => Messages)
     messages: Messages[];
 
     @CreateDateColumn()
