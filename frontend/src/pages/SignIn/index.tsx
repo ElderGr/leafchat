@@ -28,7 +28,6 @@ function SignIn() {
             boxShadow: 1,
             padding: '15px 20px',
             zIndex: '999',
-            background: '#fff',
           }}
         >
           <CustomForm onSubmit={handleSubmit}>

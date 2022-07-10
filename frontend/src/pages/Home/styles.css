@@ -1,0 +1,19 @@
+.home-container{
+  display: flex;
+  justify-content: center;
+
+}
+
+.home-container>div{
+  width: 60%;
+}
+
+.feed-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-content>div{
+  margin-top: 25px;
+
+}

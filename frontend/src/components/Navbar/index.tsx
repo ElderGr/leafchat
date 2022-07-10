@@ -211,7 +211,11 @@ export default function MiniDrawer() {
         </div>
 
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3 }}
+        className="content-background"
+      >
         <DrawerHeader />
         <Outlet />
       </Box>
